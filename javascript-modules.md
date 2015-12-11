@@ -49,7 +49,7 @@ Finally, we import it into the file where we need that dependency:
 import _ from 'lodash';
 ```
 
-Now, there is a lot more that goes into setting this workflow up as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
+Now, there is a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
 
 ## The idea behind Modules
 
