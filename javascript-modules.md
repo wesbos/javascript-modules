@@ -86,7 +86,7 @@ Now, each file can have its own local functions and variables, and unless they a
 
 How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the `couponCodes` variable available, we will used named exports. More on this in a second.
 
-The simplest and most straight forward way to export something from this module is to simply stick the `export` keyword in front like so: 
+The simplest and most straight forward way to export something from a module is to simply stick the `export` keyword in front, like so: 
 
 ```js
 const taxRate = 0.13;
