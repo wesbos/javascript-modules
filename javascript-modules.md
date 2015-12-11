@@ -53,7 +53,7 @@ Now, there is a lot more that goes into setting this workflow up, as well as ple
 
 ## The idea behind Modules
 
-Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything..) in between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
+Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything...) between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
 
 To get everything working in today's browsers requires a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
 
