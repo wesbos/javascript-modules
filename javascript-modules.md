@@ -6,11 +6,11 @@ The JavaScript landscape is changing quickly and along with it the way that we w
 
 This post is for developers who are currently loading in their JavaScript via multiple script tags and finding that dependency management is becoming a little cumbersome as their webpages or applications start to grow.
 
-For a deep dive into everything the spec has to offer as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/), particularly chapter 17.
+For a deep dive into everything the spec has to offer, as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/), particularly chapter 17.
 
 ## What are JavaScript Modules?
 
-JavaScript modules allows us to chunk our code into separate files inside our project, or use open source modules that we can install via NPM.  Writing your code in modules helps with organization, maintenance, testing and most importantly dependency management.
+JavaScript modules allows us to chunk our code into separate files inside our project, or use open source modules that we can install via NPM.  Writing your code in modules helps with organization, maintenance, testing, and most importantly dependency management.
 
 When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This way we can pull in different modules only when we need them. This is the whole idea behind NPM - when we need specific functionality we can install those modules to our project and load them into our project.
 
@@ -24,14 +24,14 @@ Whether you are doing Node or Front End development, I believe that ES6 modules 
 
 Many workflows for JavaScript look like this:
 
-1. Find a plugin or library that you want and download from GitHub
+1. Find a plugin or library that you want and download it from GitHub
 2. Load it into your website via a script tag
 3. Access it via a global variable, or as a jQuery plugin
 
 This worked well for years, but we often run into a few issues:
 
 1. Any updates to the plugins would have to be manually done — It's hard to know when there are critical bug fixes or new functionality available.
-2. All dependencies needed to be checked into source control and can make for a messy history when libraries are updated.
+2. All dependencies needed to be checked into source control, which can make for a messy history when libraries are updated.
 3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
 4. Pollution and possible collisions of the global name space. 
 
@@ -39,21 +39,21 @@ The idea of writing JavaScript modules isn't new, but with the arrival of ES6 an
 
 ### Hold on. npm? Isn't that for Node?
 
-Many moons ago, npm was the package manager for Node.js but it has since moved to be the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
+Many moons ago, npm was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
 
 First, install our dependency from npm:  `npm install lodash --save-dev`
 
-Finally, we import it into the file where we need that dependency:
+Finally, import it into the file where we need that dependency:
 
 ```js
 import _ from 'lodash';
 ```
 
-Now, there is a lot more that goes into setting this workflow up as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
+Now, there is a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
 
 ## The idea behind Modules
 
-Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything..) in between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
+Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything...) between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
 
 To get everything working in today's browsers requires a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
 
