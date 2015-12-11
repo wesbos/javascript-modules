@@ -185,6 +185,10 @@ import names from './people';
 // or
 import elephants from './people';
 // they are all equal to the array of first names
+
+// you can also get the default export like so:
+import * as stuff from './people'
+const theNames = stuff.default
 ```
 
 ## Importing modules from `npm`
