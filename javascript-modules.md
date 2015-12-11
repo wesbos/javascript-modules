@@ -308,7 +308,7 @@ If not, you will need to look to your build process to help solve this problem. 
 
 ## Gotchas 
 
-When exporting a function, do not include a semi-colon at the end of the function. Most bundlers will still allow the extra semi-colon, but it's a good practice to keep it off your function declarations so you don't have an unexpected behavior when switching bundlers. 
+When exporting a function, do not include a semicolon at the end of the function. Most bundlers will still allow the extra semicolon, but it's a good practice to keep it off your function declarations so you don't have an unexpected behavior when switching bundlers. 
 
 ```js
 // Wrong:
