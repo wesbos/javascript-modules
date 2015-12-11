@@ -2,11 +2,11 @@ A big thanks to [BitHound](https://BitHound.io) for sponsoring my time to resear
 
 # Using NPM and ES6 Modules for Front End Development
 
-The JavaScript landscape is changing quickly and the way that we work with dependencies in our websites and applications is too. 
+The JavaScript landscape is changing quickly and along with it the way that we work with dependencies in our websites and applications.
 
-This is a post for developers who are currently loading in their JavaScript via multiple script tags and find that dependency management is becoming a little cumbersome as their webpage or applications start to grow.
+This post is for developers who are currently loading in their JavaScript via multiple script tags and finding that dependency management is becoming a little cumbersome as their webpages or applications start to grow.
 
-For a deep dive into everything the spec has to offer as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/) and read chapter 17.
+For a deep dive into everything the spec has to offer as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/), particularly chapter 17.
 
 ## What are JavaScript Modules?
 
