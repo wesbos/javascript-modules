@@ -327,3 +327,4 @@ Hopefully this was a nice introduction to using `npm` and ES6 Modules. There is 
 * [ES6 Modules on Rollup's Wiki](https://github.com/rollup/rollup/wiki/ES6-modules)
 * [Browserify vs webpack hot drama](http://blog.namangoel.com/browserify-vs-webpack-js-drama)
 * [webpack & ES6](http://www.2ality.com/2015/04/webpack-es6.html)
+* [ES6 features & webpack workshop](http://slides.com/kentcdodds/es6-workshop) (complete with [repo](https://github.com/kentcdodds/es6-workshop) and video recordings: [ES6 features](https://youtu.be/aeY6ctvsurs) [Migrating with Webpack](https://youtu.be/a96r7Tjf0Ps))
