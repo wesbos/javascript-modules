@@ -136,7 +136,7 @@ const firstNames = fullNames.map(name => name.split(' ').shift());
 export default firstNames; // ["Drew", "Heather", "Kristen", "Wes", "Ryan"]
 ```
 
-Just as above you can append the export default in front of the function you wish to export as well:
+Just like above, you can append the `export default` in front of a function you wish to export as well:
 
 ```js
 export default function yell(name) {return `HEY ${name.toUpperCase()}!!`}
