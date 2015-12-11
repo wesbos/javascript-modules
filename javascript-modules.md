@@ -189,14 +189,14 @@ import elephants from './people';
 
 ## Importing modules from `npm`
 
-Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use `npm` to install them. 
+Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the axios library, we can use `npm` to install them. 
 
 ```
 npm install jquery --save-dev
 npm install lodash --save-dev
-npm install superagent --save-dev
+npm install axios --save-dev
 // or all in one go:
-npm i jquery lodash superagent -D
+npm i jquery lodash axios -D
 ```
 
 Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, it assumes the `node_modules/` directory so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
@@ -212,16 +212,18 @@ $('.cta').on('click',function() {
 
 The above code works because jQuery is a module in itself, and it's been **exported** as the default. 
 
-Let's try it again with superagent. Superagent is like jQuery in that it  exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with axios. Axios is like jQuery in that it  exports the entire libary as default, so we can import it as anything we like.
 
 ```js
 // import the module into ours
-import request from 'superagent';
+import axios from 'axios';
 // then use it!
-request
+axios
 	.get('https://api.github.com/users/wesbos')
-	.end(function(err, res){
-	    console.log(res.body);
+	.then(function onSuccess(res) {
+	    console.log(res);
+	}, function onError(err) {
+	    console.error(err);
 	});
 ```
 
