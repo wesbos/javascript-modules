@@ -6,7 +6,7 @@ The JavaScript landscape is changing quickly and along with it the way that we w
 
 This post is for developers who are currently loading in their JavaScript via multiple script tags and finding that dependency management is becoming a little cumbersome as their webpages or applications start to grow.
 
-For a deep dive into everything the spec has to offer as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/), particularly chapter 17.
+For a deep dive into everything the spec has to offer, as well as some great comparisons to CommonJS and AMD, check out Axel Rauschmayer's [Exploring ES6 book](http://exploringjs.com/), particularly chapter 17.
 
 ## What are JavaScript Modules?
 
