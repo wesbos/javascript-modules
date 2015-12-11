@@ -1,6 +1,6 @@
 A big thanks to [bitHound](https://BitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
 
-# Using NPM and ES6 Modules for Front End Development
+# Using `npm` and ES6 Modules for Front End Development
 
 The JavaScript landscape is changing quickly and along with it the way that we work with dependencies in our websites and applications.
 
@@ -10,15 +10,15 @@ For a deep dive into everything the spec has to offer, as well as some great com
 
 ## What are JavaScript Modules?
 
-JavaScript modules allows us to chunk our code into separate files inside our project, or use open source modules that we can install via NPM.  Writing your code in modules helps with organization, maintenance, testing, and most importantly dependency management.
+JavaScript modules allows us to chunk our code into separate files inside our project, or use open source modules that we can install via `npm`.  Writing your code in modules helps with organization, maintenance, testing, and most importantly dependency management.
 
-When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This way we can pull in different modules only when we need them. This is the whole idea behind NPM - when we need specific functionality we can install those modules to our project and load them into our project.
+When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This way we can pull in different modules only when we need them. This is the whole idea behind `npm` - when we need specific functionality we can install those modules to our project and load them into our project.
 
 We already said that the JavaScript landscape is changing - we're seeing fewer and fewer large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
 
-This article will take a look at using NPM and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
+This article will take a look at using `npm` and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
 
-Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today, such as React or Lodash, you'll see they have also adopted ES6 modules + NPM.
+Whether you are doing Node or Front End development, I believe that ES6 modules and `npm` are the way forward, and if you look at any of the popular open source projects today, such as React or Lodash, you'll see they have also adopted ES6 modules + `npm`.
 
 ### Current Workflow
 
@@ -35,13 +35,13 @@ This worked well for years, but we often run into a few issues:
 3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
 4. Pollution and possible collisions of the global name space. 
 
-The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on NPM as a package manager for JavaScript, we're starting to see many devs migrate away from the above and into using ES6 and npm.
+The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as a package manager for JavaScript, we're starting to see many devs migrate away from the above and into using ES6 and `npm`.
 
-### Hold on. npm? Isn't that for Node?
+### Hold on. `npm`? Isn't that for Node?
 
-Many moons ago, npm was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
+Many moons ago, `npm` was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
 
-First, install our dependency from npm:  `npm install lodash --save-dev`
+First, install our dependency from `npm`:  ``npm` install lodash --save-dev`
 
 Finally, import it into the file where we need that dependency:
 
@@ -82,7 +82,7 @@ function discountPrice(price, percentage) {
 }
 ```
 
-Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
+Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above, we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
 
 How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the `couponCodes` variable available, we will used named exports. More on this in a second.
 
@@ -187,16 +187,16 @@ import elephants from './people';
 // they are all equal to the array of first names
 ```
 
-## Importing modules from NPM
+## Importing modules from `npm`
 
-Many of the modules we will use come from npm. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use npm to install them. 
+Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use `npm` to install them. 
 
 ```
-npm install jquery --save-dev
-npm install lodash --save-dev
-npm install superagent --save-dev
+`npm` install jquery --save-dev
+`npm` install lodash --save-dev
+`npm` install superagent --save-dev
 // or all in one go:
-npm i jquery lodash superagent -D
+`npm` i jquery lodash superagent -D
 ```
 
 Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, it assumes the `node_modules/` directory so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
@@ -253,7 +253,7 @@ $('.click-me').on('click', throttle(function() {
 
 ## Making sure modules are up to date
 
-Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or two dependencies from npm that all interact with each other. 
+Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or two dependencies from `npm` that all interact with each other. 
 
 This space is moving very quickly right now, and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated or unused.
 
@@ -265,7 +265,7 @@ bitHound integrates with GitHub and BitBucket and has also rolled out automatic 
 
 ![](http://wes.io/e3om/content)
 
-Another tool that works well with bitHound is called NCU. Install globally on your development machine with `npm install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your package.json.
+Another tool that works well with bitHound is called NCU. Install globally on your development machine with ``npm` install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your package.json.
 
 
 ## The Bundle Process
@@ -279,14 +279,14 @@ There are a few popular bundlers, most of which use Babel as a dependency to com
 * [Browserify](http://browserify.org/) was initially created to allow node-style commmonjs requires in the browser. It also allows for ES6 modules. 
 * [webpack](https://webpack.github.io/) is popular in the React community. It also handles much more than ES6 modules.
 * [Rollup](https://github.com/rollup/rollup) is built for ES6, but seems to have trouble with sourcemaps - I'd check on this one in a few months. 
-* [JSPM](http://jspm.io/) sits on top of npm and [SystemJS](https://github.com/systemjs/systemjs).
+* [JSPM](http://jspm.io/) sits on top of `npm` and [SystemJS](https://github.com/systemjs/systemjs).
 * [Ember CLI](http://ember-cli.com/) is an easy-breezy command line tool similar to webpack for users of Ember. It uses Broccoli under the hood.
 
 Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for much of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules - you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
 
-If you are already running tasks via Gulp, Grunt or NPM tasks for your existing JavaScript and CSS, integrating this into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
+If you are already running tasks via Gulp, Grunt or `npm` tasks for your existing JavaScript and CSS, integrating this into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
 
-There are many different ways to implement a bundler - you can run it as part of your gulp task, via your webpack config, as an NPM script or straight from the command line.
+There are many different ways to implement a bundler - you can run it as part of your gulp task, via your webpack config, as an `npm` script or straight from the command line.
 
 I've [created a repo](TODO) detailing how to use webpack and Browserify along with some sample modules for you to play with. 
 
@@ -319,7 +319,7 @@ export function yell(name) { return `HEY ${name}`; }
 
 ## Further Reading
 
-Hopefully this was a nice introduction to using NPM and ES6 Modules. There is a lot more to learn and in my opinion the best way to learn is to start using them in your next project. Here are some fantastic resources to help you along the way:
+Hopefully this was a nice introduction to using `npm` and ES6 Modules. There is a lot more to learn and in my opinion the best way to learn is to start using them in your next project. Here are some fantastic resources to help you along the way:
 
 * [Exploring ES6 book](http://exploringjs.com/)
 * [Brief Overview of ES6 Module syntax](https://github.com/ModuleLoader/es6-module-loader/wiki/Brief-Overview-of-ES6-Module-syntax)
