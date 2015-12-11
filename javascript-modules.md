@@ -282,7 +282,7 @@ There are a few popular bundlers, most of which use Babel as a dependency to com
 * [JSPM](http://jspm.io/) sits on top of npm and [SystemJS](https://github.com/systemjs/systemjs).
 * [Ember CLI](http://ember-cli.com/) is an easy-breezy command line tool similar to webpack for users of Ember. It uses Broccoli under the hood.
 
-Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for much of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules, you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
+Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for much of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules - you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
 
 If you are already running tasks via Gulp, Grunt or NPM tasks for your existing JavaScript and CSS, integrating this into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
 
