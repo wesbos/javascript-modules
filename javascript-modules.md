@@ -64,22 +64,22 @@ Let's say we are building an online store app, and part of what we need is a fil
 Our `helpers.js` file would look like this:
 
 ```js
-	const taxRate = 0.13;
+const taxRate = 0.13;
 
-	const couponCodes = ['BLACKFRIDAY', 'FREESHIP', 'HOHOHO'];
+const couponCodes = ['BLACKFRIDAY', 'FREESHIP', 'HOHOHO'];
 
-	function formatPrice(price) {
-		// .. do some formatting
-		return formattedPrice;
-	}
+function formatPrice(price) {
+	// .. do some formatting
+	return formattedPrice;
+}
 
-	function addTax(price) {
-		return price * (1 + taxRate);
-	}
+function addTax(price) {
+	return price * (1 + taxRate);
+}
 
-	function discountPrice(price, percentage) {
-		return price * (1 - percentage);
-	}
+function discountPrice(price, percentage) {
+	return price * (1 - percentage);
+}
 ```
 
 Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
