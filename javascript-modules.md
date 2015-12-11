@@ -14,9 +14,9 @@ JavaScript modules allows us to chunk our code into separate files inside our pr
 
 When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This way we can pull in different modules only when we need them. This is the whole idea behind NPM - when we need specific functionality we can install those modules to our project and load them into our project.
 
-We already said that the JavaScript landscape is changing - we're seeing less and less large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
+We already said that the JavaScript landscape is changing - we're seeing fewer and fewer large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
 
-This article will take a look at using NPM and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD) and there are plenty of articles already on those topics. 
+This article will take a look at using NPM and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
 
 Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today such as React or Lodash, you'll see they have also adopted ES6 modules + NPM.
 
@@ -24,7 +24,7 @@ Whether you are doing Node or Front End development, I believe that ES6 modules 
 
 Many workflows for JavaScript look like this:
 
-1. Find plugin or library that you want and download from GitHub
+1. Find a plugin or library that you want and download from GitHub
 2. Load it into your website via a script tag
 3. Access it via a global variable, or as a jQuery plugin
 
@@ -55,7 +55,7 @@ Now, there is a lot more that goes into setting this workflow up as well as plen
 
 Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything..) in between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
 
-To get everything working in today's browsers required a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
+To get everything working in today's browsers requires a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
 
 ## Creating your own Modules
 
@@ -82,9 +82,9 @@ Our `helpers.js` file would look like this:
 	}
 ```
 
-Now, each file can have it's own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above we might not need taxRate to be available to other modules, but it is a variable we need internally for that module. 
+Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
 
-How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the couponCodes variable available, we will used named exports. More on this in a second.
+How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the `couponCodes` variable available, we will used named exports. More on this in a second.
 
 The simplest and most straight forward way to export something from this module is to simply stick the `export` keyword in front like so: 
 
@@ -113,18 +113,18 @@ export discountPrice;
 Or all at once:
 
 ```js
-export { couponCodes, formatPrice, addTax, discountPrice }
+export { couponCodes, formatPrice, addTax, discountPrice };
 ```
 
 There are a handful of other ways use export, make sure to check the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) if you run into a situation where these aren't working for you. 
 
 ## Default Export
 
-We just said that there is actually two ways that you can export from a module - named or default. The above was an example of **named exports** and in order to import them from another module, we must know the name of the things we wish to import — examples of this coming in a second. The benefit of doing named exports is that you can export multiple items from a module. 
+We just said that there are actually two ways that you can export from a module - named or default. The above was an example of **named exports** and in order to import them from another module, we must know the names of the things we wish to import — examples of this coming in a second. The benefit of doing named exports is that you can export multiple items from a module. 
 
 The other type of export is the default export, and while you can use this along with named exports, it's advised that you should pick one. Named exports for when you want to export multiple things, and a default export for when you wish to only export one thing. 
 
-Examples of default exports may be a single "StorePicker" React Component or an array of data. For example, if we had the following array of data that I needed to make available to other components, we can use `export default` to export it just as we did above.
+Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it just as we did above.
 
 
 ```js
@@ -191,7 +191,7 @@ import elephants from './people';
 
 Many of the modules we will use come from npm. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use npm to install them. 
 
-```js
+```
 npm install jquery --save-dev
 npm install lodash --save-dev
 npm install superagent --save-dev
@@ -212,7 +212,7 @@ $('.cta').on('click',function() {
 
 The above code works because jQuery is a module in itself, and it's been **exported** as the default. 
 
-Let's try it again with super agent. Superagent is like jQuery in that it  exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with superagent. Superagent is like jQuery in that it  exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
@@ -234,7 +234,7 @@ We can load the entire library into the `_` variable since lodash exports the en
 ```js
 // import the entire library in the _ variable
 import _ from 'lodash';
-var dogs = [
+const dogs = [
   { 'name': 'snickers', 'age': 2, breed : 'King Charles'},
   { 'name': 'prudence', 'age': 5, breed : 'Poodle'}
 ];
@@ -242,11 +242,11 @@ var dogs = [
 _.findWhere(dogs, { 'breed': 'King Charles' }); // snickers object
 ```
 
-However, often you will want just one or two lodash methods instead of the entire library. Since Lodash has exported every single one of it's methods as  a module itself, we can cherry pick just the parts we want! This is made possible by Lodash also having **named exports** for each module.
+However, often you will want just one or two lodash methods instead of the entire library. Since Lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible by Lodash also having **named exports** for each module.
 
 ```js
 import { throttle } from 'lodash';
-$('.click-me').on('click',throttle(function() {
+$('.click-me').on('click', throttle(function() {
   console.count('ouch!');
 }, 1000));
 ```
@@ -255,17 +255,17 @@ $('.click-me').on('click',throttle(function() {
 
 Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or two dependencies from npm that all interact with each other. 
 
-This space is moving very quickly right now and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated or unused.
+This space is moving very quickly right now, and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated or unused.
 
-To solve this, Bit Hound is a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies as well as provide an overall score as to how well your repo is doing. 
+To solve this, bitHound is a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies as well as provide an overall score as to how well your repo is doing. 
 
-bitHound integrates with Github and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches.	
+bitHound integrates with GitHub and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches.
 
 [Screenshot of dashboard showing some advice]
 
 ![](http://wes.io/e3om/content)
 
-Another tool that works well with bitHound is called NCU. Install globally on your development machine with `npm install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates, if they do you can run `ncu --upgradeAll` to automatically update all package versions in your package.json.
+Another tool that works well with bitHound is called NCU. Install globally on your development machine with `npm install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your package.json.
 
 
 ## The Bundle Process
@@ -274,27 +274,27 @@ Because the browser doesn't understand ES6 modules just yet, we need tools to ma
 
 The idea is that eventually we won't need to run a bundler on our code and HTTP/2 will request all `import` statements in one payload.
 
-There are a few popular bundlers, most of which use Babel as a dependency to compile them down to Commmon JS modules. 
+There are a few popular bundlers, most of which use Babel as a dependency to compile them down to CommmonJS modules. 
 
-* [Browserify](http://browserify.org/) which was initially created to allow node-style commmonjs requires in the browser also allows for ES6 modules. 
-* [WebPack](https://webpack.github.io/) which is popular in the React community also handles much more than ES6 modules.
-* [Rollup](https://github.com/rollup/rollup) is purpose built for ES6, but seems to have trouble with sourcemaps - I'd check on this on in a few months. 
-* [JSPM](http://jspm.io/) which sits on top of npm and SystemJS.
-* [Ember CLI](http://ember-cli.com/) a easy-breezy command line tool similar to webpack for users of Ember, uses Broccoli under the hood.
+* [Browserify](http://browserify.org/) was initially created to allow node-style commmonjs requires in the browser. It also allows for ES6 modules. 
+* [webpack](https://webpack.github.io/) is popular in the React community. It also handles much more than ES6 modules.
+* [Rollup](https://github.com/rollup/rollup) is built for ES6, but seems to have trouble with sourcemaps - I'd check on this one in a few months. 
+* [JSPM](http://jspm.io/) sits on top of npm and [SystemJS](https://github.com/systemjs/systemjs).
+* [Ember CLI](http://ember-cli.com/) is an easy-breezy command line tool similar to webpack for users of Ember. It uses Broccoli under the hood.
 
-Which one should you use? Whatever works best for you. I'm a big fan of Browserify for the ease of getting started and WebPack for much of it's React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or Webpack modules, you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
+Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for much of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules, you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
 
 If you are already running tasks via Gulp, Grunt or NPM tasks for your existing JavaScript and CSS, integrating this into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
 
 There are many different ways to implement a bundler - you can run it as part of your gulp task, via your webpack config, as an NPM script or straight from the command line.
 
-I've [created a repo](TODO) detailing how to use WebPack and Browserify along with some sample modules for you to play with. 
+I've [created a repo](TODO) detailing how to use webpack and Browserify along with some sample modules for you to play with. 
 
 ### Importing code that isn't a module
 
 If you are working on moving your codebase over to modules but aren't able to do it all in one shot, you can simply just `import "filename"` and it will load and run the code from that file. Now - this isn't ES6 proper, but a feature of your bundler.
 
-This is no different than running concatenation on multiple .js with the one difference being that everything loaded in will be scoped to that module.
+This is no different than running concatenation on multiple `.js` files except that everything loaded in will be scoped to that module.
 
 ### Code that requires a global variable
 
@@ -302,13 +302,13 @@ Some things, like jQuery plugins, need the window. However we just learned that 
 
 This one is a little tricky because the whole jQuery plugin ecosystem assumes that there is a global variable called `jQuery` which each plugin can tack itself onto.
 
-To solve this, first ask yourself if you really need that plugin, or if it's something you could code on your own. Much of the JavaScript plugin ecosystem is being rewritten to exclude the jQuery dependency, as as they are being rewritten, they are being created as JavaScript modules.
+To solve this, first ask yourself if you really need that plugin, or if it's something you could code on your own. Much of the JavaScript plugin ecosystem is being rewritten to exclude the jQuery dependency because, as they are being rewritten, they are being created as JavaScript modules.
 
-If not, you will need to look to your build process to help solve this problem. With Browserify, there is [Browserify Shim](https://github.com/thlorenz/browserify-shim) and [WebPack](https://webpack.github.io/docs/shimming-modules.html) has some documentation on it.
+If not, you will need to look to your build process to help solve this problem. With Browserify, there is [Browserify Shim](https://github.com/thlorenz/browserify-shim) and [webpack](https://webpack.github.io/docs/shimming-modules.html) has some documentation on it.
 
 ## Gotchas 
 
-When exporting a function, do not include a semi-colon at the end of the function. If you do include the semi-colon, most bundlers will still allow it, however it's a best practice to keep it off your function declarations so you don't have an unexpected behavior when switching bundlers. 
+When exporting a function, do not include a semi-colon at the end of the function. Most bundlers will still allow the extra semi-colon, but it's a good practice to keep it off your function declarations so you don't have an unexpected behavior when switching bundlers. 
 
 ```js
 // Wrong:
@@ -325,5 +325,5 @@ Hopefully this was a nice introduction to using NPM and ES6 Modules. There is a 
 * [Brief Overview of ES6 Module syntax](https://github.com/ModuleLoader/es6-module-loader/wiki/Brief-Overview-of-ES6-Module-syntax)
 * [ES6 Features](https://github.com/lukehoban/es6features#readme)
 * [ES6 Modules on Rollup's Wiki](https://github.com/rollup/rollup/wiki/ES6-modules)
-* [Browserify vs Webpack hot drama](http://blog.namangoel.com/browserify-vs-webpack-js-drama)
-* [Webpack & ES6](http://www.2ality.com/2015/04/webpack-es6.html)
+* [Browserify vs webpack hot drama](http://blog.namangoel.com/browserify-vs-webpack-js-drama)
+* [webpack & ES6](http://www.2ality.com/2015/04/webpack-es6.html)
