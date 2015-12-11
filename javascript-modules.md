@@ -43,7 +43,7 @@ Many moons ago, npm was the package manager for Node.js but it has since moved t
 
 First, install our dependency from npm:  `npm install lodash --save-dev`
 
-Finally, we import it into the file where we need that dependency:
+Finally, import it into the file where we need that dependency:
 
 ```js
 import _ from 'lodash';
