@@ -253,7 +253,7 @@ $('.click-me').on('click', throttle(function() {
 
 ## Making sure modules are up to date
 
-Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or two dependencies from `npm` that all interact with each other. 
+Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or more dependencies from `npm` that all interact with each other. 
 
 This space is moving very quickly right now, and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated or unused.
 
