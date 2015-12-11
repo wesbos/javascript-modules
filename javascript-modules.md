@@ -18,7 +18,7 @@ We already said that the JavaScript landscape is changing - we're seeing fewer a
 
 This article will take a look at using `npm` and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
 
-Whether you are doing Node or Front End development, I believe that ES6 modules and `npm` are the way forward, and if you look at any of the popular open source projects today, such as React or Lodash, you'll see they have also adopted ES6 modules + `npm`.
+Whether you are doing Node or Front End development, I believe that ES6 modules and `npm` are the way forward, and if you look at any of the popular open source projects today, such as React or lodash, you'll see they have also adopted ES6 modules + `npm`.
 
 ### Current Workflow
 
@@ -227,7 +227,7 @@ request
 
 ### Importing Pieces or Cherry Picking
 
-One of my favorite things about ES6 modules is that many libraries allow you to cherry-pick just the pieces you want. Lodash is a fantastic utility library filled with dozens of helpful JavaScript methods.
+One of my favorite things about ES6 modules is that many libraries allow you to cherry-pick just the pieces you want. lodash is a fantastic utility library filled with dozens of helpful JavaScript methods.
 
 We can load the entire library into the `_` variable since lodash exports the entire library as a **default export**:
 
@@ -242,7 +242,7 @@ const dogs = [
 _.findWhere(dogs, { 'breed': 'King Charles' }); // snickers object
 ```
 
-However, often you will want just one or two lodash methods instead of the entire library. Since Lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible by Lodash also having **named exports** for each module.
+However, often you will want just one or two lodash methods instead of the entire library. Since lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible by lodash also having **named exports** for each module.
 
 ```js
 import { throttle } from 'lodash';
