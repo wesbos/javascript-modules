@@ -257,7 +257,7 @@ Some resistance to the whole "small modules" way of coding is that it's easy to 
 
 This space is moving very quickly right now, and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated or unused.
 
-To solve this, bitHound is a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies as well as provide an overall score as to how well your repo is doing. 
+To solve this, bitHound offers a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies, as well as provide an overall score of how well your repo is doing. 
 
 bitHound integrates with GitHub and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches.
 
