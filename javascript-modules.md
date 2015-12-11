@@ -165,6 +165,8 @@ const displayTotal = h.formatPrice(5000);
 // Or import everything into the module scope:
 import * from './helpers';
 const displayTotal = addTax(1000);
+// I'd recommend against this method because it's less explicit
+// and could lead to code that's harder to maintain
 
 
 // or cherry pick only the things you need:
