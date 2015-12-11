@@ -199,7 +199,7 @@ npm install superagent --save-dev
 npm i jquery lodash superagent -D
 ```
 
-Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, it assumes the `node_modules/` directory so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
+Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, the Babel interpreter assumes the `node_modules/` directory, so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
 
 ```js
 // import entire library or plugin
