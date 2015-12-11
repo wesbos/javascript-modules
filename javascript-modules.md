@@ -265,7 +265,7 @@ bitHound integrates with GitHub and BitBucket and has also rolled out automatic 
 
 ![](http://wes.io/e3om/content)
 
-Another tool that works well with bitHound is called NCU. Install globally on your development machine with `npm install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your package.json.
+Another tool that works well with bitHound is called NCU. Install it globally on your development machine with `npm install node-check-updates -g` and then run `ncu` to quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your `package.json`.
 
 
 ## The Bundle Process
