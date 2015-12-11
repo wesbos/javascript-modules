@@ -18,20 +18,20 @@ We already said that the JavaScript landscape is changing - we're seeing fewer a
 
 This article will take a look at using NPM and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
 
-Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today such as React or Lodash, you'll see they have also adopted ES6 modules + NPM.
+Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today, such as React or Lodash, you'll see they have also adopted ES6 modules + NPM.
 
 ### Current Workflow
 
 Many workflows for JavaScript look like this:
 
-1. Find a plugin or library that you want and download from GitHub
+1. Find a plugin or library that you want and download it from GitHub
 2. Load it into your website via a script tag
 3. Access it via a global variable, or as a jQuery plugin
 
 This worked well for years, but we often run into a few issues:
 
 1. Any updates to the plugins would have to be done manually — It's hard to know when there are critical bug fixes or new functionality available.
-2. All dependencies needed to be checked into source control and can make for a messy history when libraries are updated.
+2. All dependencies needed to be checked into source control, and can make for a messy history when libraries are updated.
 3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
 4. Pollution and possible collisions of the global name space. 
 
@@ -39,47 +39,47 @@ The idea of writing JavaScript modules isn't new, but with the arrival of ES6 an
 
 ### Hold on. npm? Isn't that for Node?
 
-Many moons ago, npm was the package manager for Node.js but it has since moved to be the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
+Many moons ago, npm was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
 
 First, install our dependency from npm:  `npm install lodash --save-dev`
 
-Finally, we import it into the file where we need that dependency:
+Finally, import it into the file where we need that dependency:
 
 ```js
 import _ from 'lodash';
 ```
 
-Now, there is a lot more that goes into setting this workflow up as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
+Now, there is a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
 
 ## The idea behind Modules
 
-Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything..) in between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
+Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything...) between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
 
 To get everything working in today's browsers requires a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
 
 ## Creating your own Modules
 
-Let's say we are building an online store app, and part of what we need is a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions - `formatPrice()`, `addTax()` and `discountPrice(price, percentage)` as well as some variables about the online store itself.
+Let's say we are building an online store app, and part of what we need is a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions - `formatPrice(price)`, `addTax(price)` and `discountPrice(price, percentage)`, as well as some variables about the online store itself.
 
 Our `helpers.js` file would look like this:
 
 ```js
-	const taxRate = 0.13;
+const taxRate = 0.13;
 
-	const couponCodes = ['BLACKFRIDAY', 'FREESHIP', 'HOHOHO'];
+const couponCodes = ['BLACKFRIDAY', 'FREESHIP', 'HOHOHO'];
 
-	function formatPrice(price) {
-		// .. do some formatting
-		return formattedPrice;
-	}
+function formatPrice(price) {
+	// .. do some formatting
+	return formattedPrice;
+}
 
-	function addTax(price) {
-		return price * (1 + taxRate);
-	}
+function addTax(price) {
+	return price * (1 + taxRate);
+}
 
-	function discountPrice(price, percentage) {
-		return price * (1 - percentage);
-	}
+function discountPrice(price, percentage) {
+	return price * (1 - percentage);
+}
 ```
 
 Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
