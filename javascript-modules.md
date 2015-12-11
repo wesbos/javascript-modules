@@ -199,7 +199,7 @@ npm install superagent --save-dev
 npm i jquery lodash superagent -D
 ```
 
-Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, it assumes the `node_modules/` directory so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
+Once they are in our `node_modules/` directory, we can import them into our code. By default, Babel transpiles ES6 import statements to CommonJS. Therefore, by using a bundler that understands this module syntax (like webpack or browserify) you can leverage the `node_modules/` directory. So our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
 
 ```js
 // import entire library or plugin
@@ -210,9 +210,9 @@ $('.cta').on('click',function() {
 });
 ```
 
-The above code works because jQuery is a module in itself, and it's been **exported** as the default. 
+The above code works because jQuery is a module in itself, and Babel will transpile our import statement to treat jQuery's CommonJS export like a default export.
 
-Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as default (using CommonJS), so we can import it as anything we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
@@ -229,7 +229,7 @@ request
 
 One of my favorite things about ES6 modules is that many libraries allow you to cherry-pick just the pieces you want. Lodash is a fantastic utility library filled with dozens of helpful JavaScript methods.
 
-We can load the entire library into the `_` variable since lodash exports the entire library as a **default export**:
+We can load the entire library into the `_` variable since lodash exports the entire library as a the main module export (again, Babel transpiles our import to treat it as if lodash is using **default export**s):
 
 ```js
 // import the entire library in the _ variable
@@ -242,7 +242,7 @@ const dogs = [
 _.findWhere(dogs, { 'breed': 'King Charles' }); // snickers object
 ```
 
-However, often you will want just one or two lodash methods instead of the entire library. Since Lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible by Lodash also having **named exports** for each module.
+However, often you will want just one or two lodash methods instead of the entire library. Since Lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible again because of how Babel transpiles your import statement.
 
 ```js
 import { throttle } from 'lodash';
