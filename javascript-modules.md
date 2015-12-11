@@ -18,7 +18,7 @@ We already said that the JavaScript landscape is changing - we're seeing fewer a
 
 This article will take a look at using NPM and ES6 Modules. There are other registries (Bower and Component) and other module loaders (Common JS, AMD), and there are plenty of articles already on those topics. 
 
-Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today such as React or Lodash, you'll see they too have adopted ES6 modules + NPM.
+Whether you are doing Node or Front End development, I believe that ES6 modules and NPM are the way forward, and if you look at any of the popular open source projects today, such as React or Lodash, you'll see they have also adopted ES6 modules + NPM.
 
 ### Current Workflow
 
