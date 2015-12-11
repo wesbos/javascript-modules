@@ -30,7 +30,7 @@ Many workflows for JavaScript look like this:
 
 This worked well for years, but we often run into a few issues:
 
-1. Any updates to the plugins would have to be manually done — It's hard to know when there are critical bug fixes or new functionality available.
+1. Any updates to the plugins would have to be done manually — It's hard to know when there are critical bug fixes or new functionality available.
 2. All dependencies needed to be checked into source control and can make for a messy history when libraries are updated.
 3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
 4. Pollution and possible collisions of the global name space. 
