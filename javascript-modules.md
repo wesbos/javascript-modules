@@ -1,4 +1,4 @@
-A big thanks to [BitHound](https://BitHound.io) for sponsoring my time to research and write this article. Check out their service which analyzes both your front and back end JavaScript and it's dependencies.
+A big thanks to [bitHound](https://BitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
 
 # Using NPM and ES6 Modules for Front End Development
 
