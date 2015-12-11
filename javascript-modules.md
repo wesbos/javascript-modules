@@ -122,7 +122,7 @@ There are a handful of other ways use export, make sure to check the [MDN Docs](
 
 We just said that there are actually two ways that you can export from a module - named or default. The above was an example of **named exports** and in order to import them from another module, we must know the names of the things we wish to import — examples of this coming in a second. The benefit of doing named exports is that you can export multiple items from a module. 
 
-The other type of export is the default export, and while you can use this along with named exports, it's advised that you should pick one. Named exports for when you want to export multiple things, and a default export for when you wish to only export one thing. 
+The other type of export is the default export, and while you can use this along with named exports, it's advised that you should pick only one for a particular module. Use named exports when your module needs to export multiple things, and use a default export when your module only needs to export one thing. 
 
 Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it just as we did above.
 
