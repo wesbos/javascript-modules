@@ -41,7 +41,7 @@ The idea of writing JavaScript modules isn't new, but with the arrival of ES6 an
 
 Many moons ago, `npm` was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
 
-First, install our dependency from `npm`:  `npm install lodash --save-dev`
+First, install our dependency from `npm`:  `npm install lodash --save`
 
 Finally, import it into the file where we need that dependency:
 
@@ -192,11 +192,11 @@ import elephants from './people';
 Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use `npm` to install them. 
 
 ```
-npm install jquery --save-dev
-npm install lodash --save-dev
-npm install superagent --save-dev
+npm install jquery --save
+npm install lodash --save
+npm install superagent --save
 // or all in one go:
-npm i jquery lodash superagent -D
+npm i jquery lodash superagent -S
 ```
 
 Once they are in our `node_modules/` directory, we can import them into our code. When using Babel to compile modules, it assumes the `node_modules/` directory so our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
