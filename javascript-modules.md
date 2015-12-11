@@ -212,7 +212,7 @@ $('.cta').on('click',function() {
 
 The above code works because jQuery is a module in itself, and it's been **exported** as the default. 
 
-Let's try it again with superagent. Superagent is like jQuery in that it  exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as default, so we can import it as anything we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
