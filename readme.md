@@ -1,5 +1,7 @@
 # HI REVIEWERS!
 
+[### Read it here](./blob/master/javascript-modules.md)
+
 This is a simple intro to using ES6 modules and NPM together. I'd love any feedback you have - from spelling and grammar to technical updates and clarifications.
 
 Feel free to submit an issue, or just send a pull request - whatever is easiest for you. 
