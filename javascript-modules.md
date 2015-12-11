@@ -24,7 +24,7 @@ Whether you are doing Node or Front End development, I believe that ES6 modules 
 
 Many workflows for JavaScript look like this:
 
-1. Find a plugin or library that you want and download from GitHub
+1. Find a plugin or library that you want and download it from GitHub
 2. Load it into your website via a script tag
 3. Access it via a global variable, or as a jQuery plugin
 
