@@ -171,7 +171,7 @@ const displayTotal = addTax(1000);
 
 // or cherry pick only the things you need:
 import { couponcodes, discountPrice } from './helpers';
-const discount = discountPrice(500,.33);
+const discount = discountPrice(500, .33);
 ```
 
 ### Importing default exports
