@@ -219,7 +219,7 @@ $('.cta').on('click',function() {
 
 The above code works because jQuery exported as a CommonJS module, but Babel transpiles our ES6 import statement to work with jQuery's CommonJS export.
 
-Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as a default export using CommonJS, so we can import it with whatever variable name we like — it's common to call it `request`.
+Let's try it again with superagent. As jQuery, Superagent exports the entire library as a **default export** using CommonJS, so we can import it with whatever variable name we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
