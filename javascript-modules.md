@@ -149,7 +149,7 @@ Now that we have separated our code into little modules and exported pieces that
 
 To import modules that are part of our codebase, we use an `import` statement and then point to the file's location. You'll notice that we leave off the `.js` extension as it's not required.
 
-It's important to note that we don't import modules once and have them available to the entire application as globals. Whenever one of your modules has a dependency on another module — say our above code needed a lodash method — we must `import` it into that module. If we require the same lodash function in 5 of our modules, then we import it 5 times. This helps keep a sane scope as well as makes our modules very portable and reusable.
+It's important to note that we don't import modules once and have them available to the entire application as globals. Whenever one of your modules has a dependency on another module — say our above code needed a lodash method — we *must* `import` it into that module. If we require the same lodash function in 5 of our modules, then we import it 5 times. This helps keep a sane scope as well as makes our modules very portable and reusable.
 
 ### Importing named exports
 
