@@ -43,15 +43,14 @@ The idea of writing JavaScript modules isn't new, but with the arrival of ES6 an
 
 Many moons ago, `npm` was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
 
-First, install our dependency from `npm`:  `npm install lodash --save`
-
-Finally, import it into the file where we need that dependency:
+1. Install our dependency from `npm`, e.g.:  `npm install lodash --save`
+2. Import it into the file where we need that dependency, e.g.:
 
 ```js
 import _ from 'lodash';
 ```
 
-Now, there is a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
+There's a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
 
 ## The idea behind Modules
 
