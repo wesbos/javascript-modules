@@ -30,7 +30,7 @@ Many workflows for JavaScript look like this:
 2. Load it into your website via a script tag
 3. Access it via a global variable or as a jQuery plugin
 
-This type of workflow has worked fairly well for years, but it's not without its issues:
+This type of workflow has worked fairly well for years, but not without its issues:
 
 1. Updates to the plugins have to be done manually — it's hard to know when there are critical bug fixes or new functionality available.
 2. Messy source control history — all dependencies need to be checked into source control and unpleasantness can result when libraries are updated.
