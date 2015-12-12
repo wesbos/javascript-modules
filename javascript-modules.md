@@ -280,21 +280,21 @@ Another tool that works well with bitHound is called [next-update](https://www.n
 
 Because the browser doesn't understand ES6 modules just yet, we need tools to make them work today. A JavaScript bundler takes in our Modules and compiles them into a single JavaScript file or multiple bundles for different parts of your application.
 
-The idea is that eventually we won't need to run a bundler on our code and HTTP/2 will request all `import` statements in one payload.
+Eventually we won't need to run a bundler on our code and [HTTP/2](https://http2.github.io/) will request all `import` statements in one payload.
 
-There are a few popular bundlers, most of which use Babel as a dependency to compile them down to CommmonJS modules. 
+There are a few popular bundlers, most of which use Babel as a dependency to transpile your ES6 modules to CommmonJS. 
 
 * [Browserify](http://browserify.org/) was initially created to allow node-style commmonjs requires in the browser. It also allows for ES6 modules. 
-* [webpack](https://webpack.github.io/) is popular in the React community. It also handles much more than ES6 modules.
-* [Rollup](https://github.com/rollup/rollup) is built for ES6, but seems to have trouble with sourcemaps - I'd check on this one in a few months. 
+* [webpack](https://webpack.github.io/) is popular in the React community. It also handles many module formats, not just ES6.
+* [Rollup](https://github.com/rollup/rollup) is built for ES6, but seems to have trouble with sourcemaps — I'd check on this one in a few months. 
 * [JSPM](http://jspm.io/) sits on top of `npm` and [SystemJS](https://github.com/systemjs/systemjs).
 * [Ember CLI](http://ember-cli.com/) is an easy-breezy command line tool similar to webpack for users of Ember. It uses Broccoli under the hood.
 
-Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for much of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules - you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for either side. 
+Which one should you use? Whichever works best for you. I'm a big fan of Browserify for the ease of getting started and webpack for many of its React integrations. The beauty of writing ES6 modules is that you aren't writing Browserify or webpack modules — you can switch your bundler at any time. There are a lot of opinions out there on what to use, so do a quick search and you'll find plenty of arguments for each tool. 
 
-If you are already running tasks via Gulp, Grunt, or `npm` tasks for your existing JavaScript and CSS, integrating this into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
+If you are already running tasks via gulp, Grunt, or `npm` tasks for your existing JavaScript and CSS, integrating Modules into your workflow is [fairly simple](https://github.com/wesbos/React-For-Beginners-Starter-Files/blob/master/01%20-%20Introduction%20-%20Start%20Here/gulpfile.js#L58-L99). 
 
-There are many different ways to implement a bundler - you can run it as part of your gulp task, via your webpack config, as an `npm` script, or straight from the command line.
+There are many different ways to implement a bundler — you can run it as part of your gulp task, via your webpack config, as an `npm` script, or straight from the command line.
 
 I've [created a repo](TODO) detailing how to use webpack and Browserify along with some sample modules for you to play with. 
 
