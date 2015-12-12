@@ -233,7 +233,7 @@ request
 	});
 ```
 
-### Importing Pieces or Cherry Picking
+### Importing pieces or cherry-picking
 
 One of my favorite things about ES6 modules is that many libraries allow you to cherry-pick just the pieces you want. lodash is a fantastic utility library filled with dozens of helpful JavaScript methods.
 
@@ -276,7 +276,7 @@ bitHound integrates with GitHub and BitBucket and has also rolled out automatic 
 Another tool that works well with bitHound is called [next-update](https://www.npmjs.com/package/next-update). Install globally on your development machine with `npm install next-update -g` and then run `next-update`. It will check all of your dependencies and update one at a time and run your tests with each update to make sure that the next version of that dependency doesn't break your tests. If you'd rather not wait for all of your tests to run, you could try [david](http://npm.im/david) (may the force be with you).
 
 
-## The Bundle Process
+## The bundle process
 
 Because the browser doesn't understand ES6 modules just yet, we need tools to make them work today. A JavaScript bundler takes in our Modules and compiles them into a single JavaScript file or multiple bundles for different parts of your application.
 
@@ -325,7 +325,7 @@ export function yell(name) { return `HEY ${name}`; };
 export function yell(name) { return `HEY ${name}`; }
 ```
 
-## Further Reading
+## Further reading
 
 Hopefully this was a nice introduction to using `npm` and ES6 Modules. There is a lot more to learn and in my opinion the best way to learn is to start using them in your next project. Here are some fantastic resources to help you along the way:
 
