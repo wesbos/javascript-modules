@@ -12,7 +12,7 @@ For a deep dive into everything the spec has to offer, as well as some great com
 
 JavaScript modules allow us to chunk our code into separate files inside our project or to use open source modules that we can install via [`npm`](https://www.npmjs.com/).  Writing your code in modules helps with organization, maintenance, testing, and most importantly, dependency management.
 
-When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This way we can pull in different modules only when we need them. This is the whole idea behind `npm` - when we need specific functionality we can install those modules to our project and load them into our application.
+When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This separation allows us to pull in various modules only when we need them. Modules represent the core principle behind `npm` — when we need specific functionality, we can install the modules we need and load them into our application.
 
 We already said that the JavaScript landscape is changing - we're seeing fewer and fewer large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
 
