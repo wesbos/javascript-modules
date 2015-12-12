@@ -18,7 +18,7 @@ As time goes on, we're seeing fewer large frameworks that do everything under th
 
 For example, many of us learned with jQuery which included methods for doing absolutely everything from CSS manipulation to ajax calls. Now, many of us are migrating to libraries like React where often we need to pull in additional packages to perform things like ajax or routing.
 
-This article will take a look at using `npm` and ES6 Modules. There are other registries (Bower and Component) and other module loaders ([CommonJS](https://nodejs.org/docs/latest/api/modules.html), [AMD](http://requirejs.org/docs/whyamd.html)), and there are plenty of articles already on those topics. 
+This article will take a look at using `npm` and ES6 Modules. There are other registries (e.g. [Bower](http://bower.io/)) and other module loaders (e.g. [CommonJS](https://nodejs.org/docs/latest/api/modules.html) and [AMD](http://requirejs.org/docs/whyamd.html)), but there are plenty of articles already on those topics.
 
 Whether you are doing Node or front end development, I believe that ES6 modules and `npm` are the way forward. If you look at any of the popular open source projects today, such as [React](https://facebook.github.io/react/) or [lodash](https://lodash.com/), you'll see they have also adopted ES6 modules + `npm`.
 
