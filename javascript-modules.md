@@ -83,11 +83,11 @@ function discountPrice(price, percentage) {
 }
 ```
 
-Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above, we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
+Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. In the above example, we might not need `taxRate` to be available to other modules, but it's a variable we need internally within this module. 
 
 How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the `couponCodes` variable available, we will used named exports. More on this in a second.
 
-The simplest and most straight forward way to export something from a module is to simply stick the `export` keyword in front, like so: 
+The simplest and most straightforward way to export something from a module is to simply stick the `export` keyword in front, like so: 
 
 ```js
 const taxRate = 0.13;
