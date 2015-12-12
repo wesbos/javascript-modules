@@ -306,13 +306,11 @@ This is no different than running concatenation on multiple `.js` files except t
 
 ### Code that requires a global variable
 
-Some things, like jQuery plugins, need the window. However we just learned that **there are no globals with ES6 modules**. Everything is scoped to the module itself unless you explicitly set something on the window.
+Some libraries, such as jQuery plugins, don't fit well into the JavaScript Modules system. The entire jQuery plugin ecosystem assumes that there is a global variable called `window.jQuery` that each plugin can tack itself onto. However, we just learned that **there are no globals with ES6 modules**. Everything is scoped to the module itself unless you explicitly set something on the window.
 
-This one is a little tricky because the whole jQuery plugin ecosystem assumes that there is a global variable called `jQuery` which each plugin can tack itself onto.
+To solve this, first ask yourself if you really need that plugin or if it's something you could code on your own. Much of the JavaScript plugin ecosystem is being rewritten to exclude the jQuery dependency and to be made available as standalone JavaScript Modules.
 
-To solve this, first ask yourself if you really need that plugin, or if it's something you could code on your own. Much of the JavaScript plugin ecosystem is being rewritten to exclude the jQuery dependency because, as they are being rewritten, they are being created as JavaScript modules.
-
-If not, you will need to look to your build process to help solve this problem. With Browserify, there is [Browserify Shim](https://github.com/thlorenz/browserify-shim) and [webpack](https://webpack.github.io/docs/shimming-modules.html) has some documentation on it.
+If not, you will need to look to your build process to help solve this problem. Browserify has [Browserify Shim](https://github.com/thlorenz/browserify-shim) and [webpack](https://webpack.github.io/docs/shimming-modules.html) has some documentation on it.
 
 ## Gotchas 
 
