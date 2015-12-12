@@ -172,7 +172,7 @@ const displayTotal = addTax(1000);
 
 
 // or cherry pick only the things you need:
-import { couponcodes, discountPrice } from './helpers';
+import { couponCodes, discountPrice } from './helpers';
 const discount = discountPrice(500, .33);
 ```
 
