@@ -120,13 +120,13 @@ export { couponCodes, formatPrice, addTax, discountPrice };
 
 There are a handful of other ways use export, make sure to check the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) if you run into a situation where these aren't working for you. 
 
-## Default Export
+## Default export
 
-We just said that there are actually two ways that you can export from a module - named or default. The above was an example of **named exports** and in order to import them from another module, we must know the names of the things we wish to import — examples of this coming in a second. The benefit of doing named exports is that you can export multiple items from a module. 
+As mentioned before, there are two ways that you can export from a module — named or default. Above were examples of **named exports**. In order to import these exports into another module, we must know the names of the variables/functions we wish to import — examples of this coming in a second. The benefit of using named exports is that you can export multiple items from a single module. 
 
-The other type of export is the default export, and while you can use this along with named exports, it's advised that you should pick only one for a particular module. Use named exports when your module needs to export multiple things, and use a default export when your module only needs to export one thing. 
+The other type of export is the default export. Use named exports when your module needs to export multiple variables/functions, and use a default export when your module only needs to export one variable/function. While you can use both default exports and named exports within a single module, I'd advise you to pick only one style per module.
 
-Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it just as we did above.
+Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it.
 
 
 ```js
