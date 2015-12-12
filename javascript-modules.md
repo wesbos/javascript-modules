@@ -140,7 +140,7 @@ export default firstNames; // ["Drew", "Heather", "Kristen", "Wes", "Ryan"]
 Just like above, you can append the `export default` in front of a function you wish to export as well:
 
 ```js
-export default function yell(name) {return `HEY ${name.toUpperCase()}!!`}
+export default function yell(name) { return `HEY ${name.toUpperCase()}!!` }
 ```
 
 
