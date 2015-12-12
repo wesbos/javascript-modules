@@ -299,9 +299,9 @@ I've [created a repo](TODO) detailing how to use webpack and Browserify along wi
 
 ### Importing code that isn't a module
 
-If you are working on moving your codebase over to modules but aren't able to do it all in one shot, you can simply just `import "filename"` and it will load and run the code from that file. Now - this isn't ES6 proper, but a feature of your bundler.
+If you are working on moving your codebase over to modules but aren't able to do it all in one shot, you can simply just `import "filename"` and it will load and run the code from that file. This isn't exactly ES6, but it's a feature of your bundler.
 
-This is no different than running concatenation on multiple `.js` files except that everything loaded in will be scoped to that module.
+This concept is no different than running concatenation on multiple `.js` files except that the code you import will be scoped to the importing module.
 
 ### Code that requires a global variable
 
