@@ -28,14 +28,14 @@ Many workflows for JavaScript look like this:
 
 1. Find a plugin or library that you want and download it from GitHub
 2. Load it into your website via a script tag
-3. Access it via a global variable, or as a jQuery plugin
+3. Access it via a global variable or as a jQuery plugin
 
-This worked well for years, but we often run into a few issues:
+This type of workflow has worked fairly well for years, but it's not without its issues:
 
-1. Any updates to the plugins would have to be done manually — It's hard to know when there are critical bug fixes or new functionality available.
-2. All dependencies needed to be checked into source control, and can make for a messy history when libraries are updated.
-3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
-4. Pollution and possible collisions of the global name space. 
+1. Updates to the plugins have to be done manually — it's hard to know when there are critical bug fixes or new functionality available.
+2. Messy source control history — all dependencies need to be checked into source control and unpleasantness can result when libraries are updated.
+3. Little to no dependency management — many scripts duplicate functionality but could easily share that functionality via a small module.
+4. Pollution and possible collisions within the global name space. 
 
 The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as a package manager for JavaScript, we're starting to see many devs migrate away from the above and into using ES6 and `npm`.
 
