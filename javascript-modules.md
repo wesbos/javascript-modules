@@ -41,7 +41,7 @@ The idea of writing JavaScript modules isn't new, but with the arrival of ES6 an
 
 ### Hold on. `npm`? Isn't that for Node?
 
-Many moons ago, `npm` was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
+Many moons ago, `npm` began as the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front end dev in general. Nowadays, we can cut the whole song and dance for installing libraries down to 2 steps: 
 
 First, install our dependency from `npm`:  `npm install lodash --save`
 
