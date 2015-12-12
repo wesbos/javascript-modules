@@ -177,9 +177,9 @@ const discount = discountPrice(500, 0.33);
 
 ### Importing default exports
 
-The second thing we did was export an array of first names from `people.js`, since this was the only thing that needed to be exported from this module. 
+If you recall, we also exported an array of first names from `people.js`, since this was the only thing that needed to be exported from that module. 
 
-Default exports can be imported as any name - it's not necessary to know the name of the variable, function or class that was exported. 
+Default exports can be imported as any name — it's not necessary to know the name of the variable, function, or class that was exported. 
 
 ```js
 import firstNames from './people';
@@ -187,7 +187,7 @@ import firstNames from './people';
 import names from './people';
 // or
 import elephants from './people';
-// they are all equal to the array of first names
+// these will all import the array of first names
 
 // you can also get the default export like so:
 import * as stuff from './people'
