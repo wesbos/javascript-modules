@@ -22,7 +22,7 @@ This article will take a look at using `npm` and ES6 Modules. There are other re
 
 Whether you are doing Node or front end development, I believe that ES6 modules and `npm` are the way forward. If you look at any of the popular open source projects today, such as [React](https://facebook.github.io/react/) or [lodash](https://lodash.com/), you'll see they have also adopted ES6 modules + `npm`.
 
-### Current Workflow
+### Current workflow
 
 Many workflows for JavaScript look like this:
 
