@@ -207,20 +207,20 @@ npm install superagent --save
 npm i jquery lodash superagent -S
 ```
 
-Once they are in our `node_modules/` directory, we can import them into our code. By default, Babel transpiles ES6 import statements to CommonJS. Therefore, by using a bundler that understands this module syntax (like webpack or browserify) you can leverage the `node_modules/` directory. So our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
+Once these packages are in our `node_modules/` directory, we can import them into our code. By default, Babel transpiles ES6 import statements to CommonJS. Therefore, by using a bundler that understands this module syntax (like webpack or browserify) you can leverage the `node_modules/` directory. So our import statements only need to include the name of the Node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
 
 ```js
 // import entire library or plugin
 import $ from 'jquery'; 
-// and then go ahead an use them as we wish:
+// and then go ahead and use them as we wish:
 $('.cta').on('click',function() {
 	alert('Ya clicked it!');
 });
 ```
 
-The above code works because jQuery is a module in itself, and Babel will transpile our import statement to treat jQuery's CommonJS export like a default export.
+The above code works because jQuery exported as a CommonJS module, but Babel transpiles our ES6 import statement to work with jQuery's CommonJS export.
 
-Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as default (using CommonJS), so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as a default export using CommonJS, so we can import it with whatever variable name we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
