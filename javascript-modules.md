@@ -37,7 +37,7 @@ This worked well for years, but we often run into a few issues:
 3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
 4. Pollution and possible collisions of the global name space. 
 
-The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as a package manager for JavaScript, we're starting to see many devs migrate away from the above and into using ES6 and `npm`.
+The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as the preferred package manager for JavaScript, we're starting to see many devs migrate away from the above workflow and standardizing on using ES6 and `npm`.
 
 ### Hold on. `npm`? Isn't that for Node?
 
