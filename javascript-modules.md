@@ -16,7 +16,7 @@ When we write JavaScript, it's ideal if we can make modules that do one thing an
 
 We already said that the JavaScript landscape is changing - we're seeing fewer and fewer large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
 
-This article will take a look at using `npm` and ES6 Modules. There are other registries (Bower and Component) and other module loaders ([CommonJS](https://nodejs.org/docs/latest/api/modules.html), [AMD](http://requirejs.org/docs/whyamd.html)), and there are plenty of articles already on those topics. 
+This article will take a look at using `npm` and ES6 Modules. There are other registries (e.g. [Bower](http://bower.io/)) and other module loaders (e.g. [CommonJS](https://nodejs.org/docs/latest/api/modules.html) and [AMD](http://requirejs.org/docs/whyamd.html)), but there are plenty of articles already on those topics.
 
 Whether you are doing Node or Front End development, I believe that ES6 modules and `npm` are the way forward, and if you look at any of the popular open source projects today, such as React or lodash, you'll see they have also adopted ES6 modules + `npm`.
 
