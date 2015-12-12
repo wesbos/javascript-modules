@@ -258,11 +258,11 @@ $('.click-me').on('click', throttle(function() {
 }, 1000));
 ```
 
-## Making sure modules are up to date
+## Making sure modules are up-to-date
 
 Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or more dependencies from `npm` that all interact with each other. 
 
-This space is moving very quickly right now, and keeping these dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws, or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated, or unused.
+The JavaScript ecosystem is moving very quickly right now, and keeping your dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws, or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated, or unused.
 
 To solve this, bitHound offers a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies, as well as provide an overall score of how well your repo is doing. 
 
@@ -272,7 +272,7 @@ bitHound integrates with GitHub and BitBucket and has also rolled out automatic 
 
 ![](http://wes.io/e3om/content)
 
-Another tool that works well with bitHound is called [next-update](https://www.npmjs.com/package/next-update). Install globally on your development machine with `npm install next-update -g` and then run `next-update`. It will check all of your dependencies and update one at a time and run your tests with each update to make sure that the next version of that dependency doesn't break your tests. If you'd rather not wait for all of your tests to run, you could try [david](http://npm.im/david) (may the force be with you).
+Another tool that works well with bitHound is called [next-update](https://www.npmjs.com/package/next-update). Install globally on your development machine with `npm install next-update -g` and then run `next-update`. It will check all of your dependencies, update one at a time, and run your tests with each update to make sure that the next version of that dependency doesn't break your tests. If you'd rather not wait for all of your tests to run, you could try [david](http://npm.im/david) (may the force be with you).
 
 
 ## The Bundle Process
