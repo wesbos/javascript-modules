@@ -60,7 +60,7 @@ Getting everything working in current browsers requires a bundle step. We'll tal
 
 ## Creating your own Modules
 
-Let's say we are building an online store app, and part of what we need is a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions - `formatPrice(price)`, `addTax(price)` and `discountPrice(price, percentage)`, as well as some variables about the online store itself.
+Let's say we are building an online store app and we need a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions — `formatPrice(price)`, `addTax(price)` and `discountPrice(price, percentage)`, as well as some variables about the online store itself.
 
 Our `helpers.js` file would look like this:
 
