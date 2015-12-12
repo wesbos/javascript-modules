@@ -22,46 +22,45 @@ This article will take a look at using `npm` and ES6 Modules. There are other re
 
 Whether you are doing Node or front end development, I believe that ES6 modules and `npm` are the way forward. If you look at any of the popular open source projects today, such as [React](https://facebook.github.io/react/) or [lodash](https://lodash.com/), you'll see they have also adopted ES6 modules + `npm`.
 
-### Current Workflow
+### Current workflow
 
 Many workflows for JavaScript look like this:
 
 1. Find a plugin or library that you want and download it from GitHub
 2. Load it into your website via a script tag
-3. Access it via a global variable, or as a jQuery plugin
+3. Access it via a global variable or as a jQuery plugin
 
-This worked well for years, but we often run into a few issues:
+This type of workflow has worked fairly well for years, but it's not without its issues:
 
-1. Any updates to the plugins would have to be done manually — It's hard to know when there are critical bug fixes or new functionality available.
-2. All dependencies needed to be checked into source control, and can make for a messy history when libraries are updated.
-3. Little to no dependency management — many scripts would duplicate functionality that could easily be a small module shared between the them.
-4. Pollution and possible collisions of the global name space. 
+1. Updates to the plugins have to be done manually — it's hard to know when there are critical bug fixes or new functionality available.
+2. Messy source control history — all dependencies need to be checked into source control and unpleasantness can result when libraries are updated.
+3. Little to no dependency management — many scripts duplicate functionality but could easily share that functionality via a small module.
+4. Pollution and possible collisions within the global name space. 
 
-The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as a package manager for JavaScript, we're starting to see many devs migrate away from the above and into using ES6 and `npm`.
+The idea of writing JavaScript modules isn't new, but with the arrival of ES6 and the industry settling on `npm` as the preferred package manager for JavaScript, we're starting to see many devs migrate away from the above workflow and standardizing on using ES6 and `npm`.
 
 ### Hold on. `npm`? Isn't that for Node?
 
-Many moons ago, `npm` was the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front-end dev in general. This means that instead of doing the whole song and dance above, we can cut that down to 2 steps: 
+Many moons ago, `npm` began as the package manager for Node.js, but it has since evolved to become the package manager for JavaScript and front end dev in general. Nowadays, we can cut the whole song and dance for installing libraries down to 2 steps: 
 
-First, install our dependency from `npm`:  `npm install lodash --save`
-
-Finally, import it into the file where we need that dependency:
+1. Install our dependency from `npm`, e.g.:  `npm install lodash --save`
+2. Import it into the file where we need that dependency, e.g.:
 
 ```js
 import _ from 'lodash';
 ```
 
-Now, there is a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
+There's a lot more that goes into setting this workflow up, as well as plenty to learn about **importing** and **exporting** from modules, so let's dive into that.
 
 ## The idea behind Modules
 
-Instead of just loading everything into the global name space, we use `import` and `export` statements to share things (variables, functions, data, anything...) between files. Each module will import the dependencies that it needs, and export anything that should be made import-able by other files.
+Instead of just loading everything into the global namespace, we use `import` and `export` statements to share things (variables, functions, data, anything...) between files. Each module will import the dependencies that it needs and export anything that should be made import-able by other files.
 
-To get everything working in today's browsers requires a bundle step - and we will talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
+Getting everything working in current browsers requires a bundle step. We'll talk about that later in this article, but for now let's focus on the core ideas behind JavaScript Modules.
 
 ## Creating your own Modules
 
-Let's say we are building an online store app, and part of what we need is a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions - `formatPrice(price)`, `addTax(price)` and `discountPrice(price, percentage)`, as well as some variables about the online store itself.
+Let's say we are building an online store app and we need a file to hold all of our helper functions. We can create a module called `helpers.js` that contains a number of handy helper functions — `formatPrice(price)`, `addTax(price)` and `discountPrice(price, percentage)`, as well as some variables about the online store itself.
 
 Our `helpers.js` file would look like this:
 
@@ -84,11 +83,11 @@ function discountPrice(price, percentage) {
 }
 ```
 
-Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. Above, we might not need `taxRate` to be available to other modules, but it is a variable we need internally for that module. 
+Now, each file can have its own local functions and variables, and unless they are explicitly exported, they won't ever bleed into the scope of any other files. In the above example, we might not need `taxRate` to be available to other modules, but it's a variable we need internally within this module. 
 
 How do we make the functions and variables above available to other modules? **We need to export them**. There are two kinds of exports in ES6 - named exports and a single default export. Since we need to make multiple functions and the `couponCodes` variable available, we will used named exports. More on this in a second.
 
-The simplest and most straight forward way to export something from a module is to simply stick the `export` keyword in front, like so: 
+The simplest and most straightforward way to export something from a module is to simply stick the `export` keyword in front, like so: 
 
 ```js
 const taxRate = 0.13;
@@ -120,13 +119,13 @@ export { couponCodes, formatPrice, addTax, discountPrice };
 
 There are a handful of other ways use export, make sure to check the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) if you run into a situation where these aren't working for you. 
 
-## Default Export
+## Default export
 
-We just said that there are actually two ways that you can export from a module - named or default. The above was an example of **named exports** and in order to import them from another module, we must know the names of the things we wish to import — examples of this coming in a second. The benefit of doing named exports is that you can export multiple items from a module. 
+As mentioned before, there are two ways that you can export from a module — named or default. Above were examples of **named exports**. In order to import these exports into another module, we must know the names of the variables/functions we wish to import — examples of this coming in a second. The benefit of using named exports is that you can export multiple items from a single module. 
 
-The other type of export is the default export, and while you can use this along with named exports, it's advised that you should pick only one for a particular module. Use named exports when your module needs to export multiple things, and use a default export when your module only needs to export one thing. 
+The other type of export is the default export. Use named exports when your module needs to export multiple variables/functions, and use a default export when your module only needs to export one variable/function. While you can use both default exports and named exports within a single module, I'd advise you to pick only one style per module.
 
-Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it just as we did above.
+Examples of default exports may be a single `StorePicker` React Component or an array of data. For example, if we have the following array of data that we need to make available to other components, we can use `export default` to export it.
 
 
 ```js
@@ -147,7 +146,7 @@ export default function yell(name) {return `HEY ${name.toUpperCase()}!!`}
 
 ## Importing your own modules
 
-Now that we have separated our code into little modules and exported pieces that we need, we can go ahead an import parts or all of those modules into our code. 
+Now that we have separated our code into little modules and exported pieces that we need, we can go ahead an import parts or all of those modules into other parts of our application. 
 
 To import modules that are part of our codebase, we use an `import` statement and then point to the file's location. You'll notice that we leave off the `.js` extension as it's not required.
 
@@ -167,20 +166,20 @@ const displayTotal = h.formatPrice(5000);
 // Or import everything into the module scope:
 import * from './helpers';
 const displayTotal = addTax(1000);
-// I'd recommend against this method because it's less explicit
+// I'd recommend against this style because it's less explicit
 // and could lead to code that's harder to maintain
 
 
 // or cherry pick only the things you need:
 import { couponCodes, discountPrice } from './helpers';
-const discount = discountPrice(500, .33);
+const discount = discountPrice(500, 0.33);
 ```
 
 ### Importing default exports
 
-The second thing we did was export an array of first names from `people.js`, since this was the only thing that needed to be exported from this module. 
+If you recall, we also exported an array of first names from `people.js`, since this was the only thing that needed to be exported from that module. 
 
-Default exports can be imported as any name - it's not necessary to know the name of the variable, function or class that was exported. 
+Default exports can be imported as any name — it's not necessary to know the name of the variable, function, or class that was exported. 
 
 ```js
 import firstNames from './people';
@@ -188,7 +187,7 @@ import firstNames from './people';
 import names from './people';
 // or
 import elephants from './people';
-// they are all equal to the array of first names
+// these will all import the array of first names
 
 // you can also get the default export like so:
 import * as stuff from './people'
@@ -207,20 +206,20 @@ npm install superagent --save
 npm i jquery lodash superagent -S
 ```
 
-Once they are in our `node_modules/` directory, we can import them into our code. By default, Babel transpiles ES6 import statements to CommonJS. Therefore, by using a bundler that understands this module syntax (like webpack or browserify) you can leverage the `node_modules/` directory. So our import statements only need to include the name of the node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
+Once these packages are in our `node_modules/` directory, we can import them into our code. By default, Babel transpiles ES6 import statements to CommonJS. Therefore, by using a bundler that understands this module syntax (like webpack or browserify) you can leverage the `node_modules/` directory. So our import statements only need to include the name of the Node module. Other bundlers may require a plugin or configuration to pull from your `node_modules/` folder. 
 
 ```js
 // import entire library or plugin
 import $ from 'jquery'; 
-// and then go ahead an use them as we wish:
+// and then go ahead and use them as we wish:
 $('.cta').on('click',function() {
 	alert('Ya clicked it!');
 });
 ```
 
-The above code works because jQuery is a module in itself, and Babel will transpile our import statement to treat jQuery's CommonJS export like a default export.
+The above code works because jQuery exported as a CommonJS module, but Babel transpiles our ES6 import statement to work with jQuery's CommonJS export.
 
-Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as default (using CommonJS), so we can import it as anything we like — it's common to call it `request`.
+Let's try it again with superagent. Superagent is like jQuery in that it exports the entire libary as a default export using CommonJS, so we can import it with whatever variable name we like — it's common to call it `request`.
 
 ```js
 // import the module into ours
@@ -250,7 +249,7 @@ const dogs = [
 _.findWhere(dogs, { 'breed': 'King Charles' }); // snickers object
 ```
 
-However, often you will want just one or two lodash methods instead of the entire library. Since lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible again because of how Babel transpiles your import statement.
+However, often you will want just one or two lodash methods instead of the entire library. Since lodash has exported every single one of its methods as a module itself, we can cherry-pick just the parts we want! This is made possible again because of how Babel transpiles your import statement.
 
 ```js
 import { throttle } from 'lodash';
