@@ -14,7 +14,7 @@ JavaScript modules allow us to chunk our code into separate files inside our pro
 
 When we write JavaScript, it's ideal if we can make modules that do one thing and one thing well. This separation allows us to pull in various modules only when we need them. Modules represent the core principle behind `npm` — when we need specific functionality, we can install the modules we need and load them into our application.
 
-We already said that the JavaScript landscape is changing - we're seeing fewer and fewer large frameworks that do everything under the sun, and more __small modules that do one thing and one thing well__. 
+As time goes on, we're seeing fewer large frameworks that do everything under the sun while seeing more __small modules that do one thing and one thing well__. 
 
 This article will take a look at using `npm` and ES6 Modules. There are other registries (Bower and Component) and other module loaders ([CommonJS](https://nodejs.org/docs/latest/api/modules.html), [AMD](http://requirejs.org/docs/whyamd.html)), and there are plenty of articles already on those topics. 
 
