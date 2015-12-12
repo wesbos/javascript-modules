@@ -195,7 +195,7 @@ const theNames = stuff.default
 
 ## Importing modules from `npm`
 
-Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash or something to perform Ajax requests like the superagent library, we can use `npm` to install them. 
+Many of the modules we will use come from `npm`. Whether we need a full library like jQuery, a few utility functions from lodash, or something to perform Ajax requests like the superagent library, we can use `npm` to install them. 
 
 ```
 npm install jquery --save
