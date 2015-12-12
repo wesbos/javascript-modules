@@ -146,7 +146,7 @@ export default function yell(name) {return `HEY ${name.toUpperCase()}!!`}
 
 ## Importing your own modules
 
-Now that we have separated our code into little modules and exported pieces that we need, we can go ahead an import parts or all of those modules into our code. 
+Now that we have separated our code into little modules and exported pieces that we need, we can go ahead an import parts or all of those modules into other parts of our application. 
 
 To import modules that are part of our codebase, we use an `import` statement and then point to the file's location. You'll notice that we leave off the `.js` extension as it's not required.
 
@@ -166,13 +166,13 @@ const displayTotal = h.formatPrice(5000);
 // Or import everything into the module scope:
 import * from './helpers';
 const displayTotal = addTax(1000);
-// I'd recommend against this method because it's less explicit
+// I'd recommend against this style because it's less explicit
 // and could lead to code that's harder to maintain
 
 
 // or cherry pick only the things you need:
 import { couponcodes, discountPrice } from './helpers';
-const discount = discountPrice(500, .33);
+const discount = discountPrice(500, 0.33);
 ```
 
 ### Importing default exports
