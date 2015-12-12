@@ -171,7 +171,7 @@ const displayTotal = addTax(1000);
 // and could lead to code that's harder to maintain
 
 
-// or cherry pick only the things you need:
+// or cherry-pick only the things you need:
 import { couponcodes, discountPrice } from './helpers';
 const discount = discountPrice(500, .33);
 ```
@@ -250,7 +250,7 @@ const dogs = [
 _.findWhere(dogs, { 'breed': 'King Charles' }); // snickers object
 ```
 
-However, often you will want just one or two lodash methods instead of the entire library. Since lodash has exported every single one of its methods as a module itself, we can cherry pick just the parts we want! This is made possible again because of how Babel transpiles your import statement.
+However, often you will want just one or two lodash methods instead of the entire library. Since lodash has exported every single one of its methods as a module itself, we can cherry-pick just the parts we want! This is made possible again because of how Babel transpiles your import statement.
 
 ```js
 import { throttle } from 'lodash';
