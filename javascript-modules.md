@@ -16,7 +16,7 @@ When we write JavaScript, it's ideal if we can make modules that do one thing an
 
 As time goes on, we're seeing fewer large frameworks that do everything under the sun while seeing more __small modules that do one thing and one thing well__. 
 
-For example, many of us learned with jQuery which included methods for doing absolutely everything from CSS manipulation to ajax calls. Now, many of us are migrating to libraries like React where often we need to pull in additional packages to perform things like ajax or routing.
+For example, many of us learned jQuery. It included methods for doing absolutely everything from CSS manipulation to ajax calls. Now, many of us are migrating to libraries like React where often we need to pull in additional packages to perform tasks like ajax or routing.
 
 This article will take a look at using `npm` and ES6 Modules. There are other registries (e.g. [Bower](http://bower.io/)) and other module loaders (e.g. [CommonJS](https://nodejs.org/docs/latest/api/modules.html) and [AMD](http://requirejs.org/docs/whyamd.html)), but there are plenty of articles already on those topics.
 
