@@ -268,7 +268,7 @@ To solve this, bitHound offers a fantastic service that will constantly monitor 
 
 bitHound integrates with GitHub and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches. When your dependencies are out of date, you'll be pinged in Slack or HipChat or get an email detailing everything.
 
-![](http://wes.io/e3om/content)
+![](http://wesbos.com/wp-content/uploads/2015/12/wesbos.png)
 
 bitHound also has branch status on Pull Requests -  set up pass/fail criteria and bitHound will post the status right to GitHub or Bitbucket.
 
