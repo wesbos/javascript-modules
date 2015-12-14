@@ -1,4 +1,4 @@
-A big thanks to [bitHound](https://bitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
+A big thanks to [bitHound](https://bitHound.io) for sponsoring my time to research and write this article. Check out their service, which provides continuous analysis and quality checks for both your front and back end JavaScript and its dependencies.
 
 # Start using npm and ES6 Modules for Front End Development
 
@@ -332,6 +332,7 @@ Hopefully this was a nice introduction to using `npm` and ES6 Modules. There is 
 * [Browserify vs webpack hot drama](http://blog.namangoel.com/browserify-vs-webpack-js-drama)
 * [webpack & ES6](http://www.2ality.com/2015/04/webpack-es6.html)
 * [ES6 features & webpack workshop](http://slides.com/kentcdodds/es6-workshop) (complete with [repo](https://github.com/kentcdodds/es6-workshop) and video recordings: [ES6 features](https://youtu.be/aeY6ctvsurs) [Migrating with Webpack](https://youtu.be/a96r7Tjf0Ps))
+* [npm and Security– An Infographic](https://www.bithound.io/npm-package-security)
 
 ## Thanks + Updates
 A huge thanks to [Stephen Margheim](https://github.com/smargh), [Kent C. Dodds](http://kentcdodds.com/), [Mike Chen](http://mikechen.io/), [Ben Berman](https://github.com/rivertam), and [Juan Pablo Osorio Ospina](https://about.me/jpoo90) for reviewing and providing excellent feedback on this article.
