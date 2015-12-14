@@ -1,11 +1,3 @@
-# HI REVIEWERS!
-
-## [Read it here](https://github.com/wesbos/javascript-modules/blob/master/javascript-modules.md)
-
-This is a simple intro to using ES6 modules and NPM together. I'd love any feedback you have - from spelling and grammar to technical updates and clarifications.
-
-Feel free to submit feedback and corrections as an issue, or just fork + send a pull request - whatever is easiest for you!
-
 # JavaScript Modules
 
 A blog post about using NPM and ES6 modules. If you have any corrections, suggestions, clarifications 
