@@ -272,8 +272,7 @@ bitHound integrates with GitHub and BitBucket and has also rolled out automatic 
 
 bitHound also has branch status on Pull Requests -  set up pass/fail criteria and bitHound will post the status right to GitHub or Bitbucket.
 
-Another tool that works well with bitHound is called [next-update](https://www.npmjs.com/package/next-update). Install globally on your development machine with `npm install next-update -g` and then run `next-update`. It will check all of your dependencies, update one at a time, and run your tests with each update to make sure that the next version of that dependency doesn't break your tests. If you'd rather not wait for all of your tests to run, you could try [david](http://npm.im/david) (may the force be with you).
-
+Another tool that works well with bitHound is called [npm-check-updates](https://www.npmjs.com/package/npm-check-updates). Install globally on your development machine with `npm install npm-check-updates -g` and then run `ncu`. To quickly check if your packages have any available updates. If they do, you can run `ncu --upgradeAll` to automatically update all packages in your package.json. Make sure to run a `npm install` after doing this to fetch the latest code from NPM.
 
 ## The Bundle Process
 
