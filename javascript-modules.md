@@ -1,5 +1,5 @@
 <!-- 
-	# Start using npm and ES6 Modules for Front End Development
+	# An Intro to using npm and ES6 Modules for Front End Development
  -->
  
 A big thanks to [bitHound](https://bitHound.io) for sponsoring my time to research and write this article. Check out their service, which provides continuous analysis and quality checks for both your front and back end JavaScript and its dependencies.
