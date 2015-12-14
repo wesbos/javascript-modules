@@ -1,6 +1,6 @@
 A big thanks to [bitHound](https://bitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
 
-# Using `npm` and ES6 Modules for Front End Development
+# Start using npm and ES6 Modules for Front End Development
 
 The JavaScript landscape is changing quickly and along with it the way that we work with dependencies in our websites and applications.
 
@@ -334,9 +334,7 @@ Hopefully this was a nice introduction to using `npm` and ES6 Modules. There is 
 * [ES6 features & webpack workshop](http://slides.com/kentcdodds/es6-workshop) (complete with [repo](https://github.com/kentcdodds/es6-workshop) and video recordings: [ES6 features](https://youtu.be/aeY6ctvsurs) [Migrating with Webpack](https://youtu.be/a96r7Tjf0Ps))
 
 ## Thanks + Updates
-A huge thanks to [Stephen Margheim](https://github.com/smargh), [Kent C. Dodds
-](http://kentcdodds.com/), [Mike Chen](http://mikechen.io/), [Ben Berman
-](https://github.com/rivertam), and [Juan Pablo Osorio Ospina](https://about.me/jpoo90) for reviewing and providing excellent feedback on this article.
+A huge thanks to [Stephen Margheim](https://github.com/smargh), [Kent C. Dodds](http://kentcdodds.com/), [Mike Chen](http://mikechen.io/), [Ben Berman](https://github.com/rivertam), and [Juan Pablo Osorio Ospina](https://about.me/jpoo90) for reviewing and providing excellent feedback on this article.
 
 If you have any suggestions, code samples, technical updates or clarifications you would like to add to this, please send on over a [pull request](https://github.com/wesbos/javascript-modules).
 
