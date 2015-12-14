@@ -1,4 +1,4 @@
-A big thanks to [bitHound](https://BitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
+A big thanks to [bitHound](https://bitHound.io) for sponsoring my time to research and write this article. Check out their service, which analyzes both your front and back end JavaScript and its dependencies.
 
 # Using `npm` and ES6 Modules for Front End Development
 
@@ -262,15 +262,15 @@ $('.click-me').on('click', throttle(function() {
 
 Some resistance to the whole "small modules" way of coding is that it's easy to end up with a dozen or more dependencies from `npm` that all interact with each other. 
 
-The JavaScript ecosystem is moving very quickly right now, and keeping your dependencies up to date can be a headache. Knowing when both your code and your dependencies have bugs, security flaws, or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated, or unused.
+The JavaScript ecosystem is moving very quickly right now, and keeping your dependencies up to date can be a headache. Knowing when both your own code and your dependencies have bugs, security flaws, or just general code smells isn't as easy as it used to be. We need to know if anything in our project is insecure, deprecated, outdated, or unused.
 
-To solve this, bitHound offers a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies, as well as provide an overall score of how well your repo is doing. 
+To solve this, bitHound offers a fantastic service that will constantly monitor your code and let you know when there is anything wrong with your dependencies, as well as provide an overall score of how well your repo is doing. [Find out how yours stacks up](http://bitHound.io), it's free for all your open source projects.
 
-bitHound integrates with GitHub and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches.
-
-[Screenshot of dashboard showing some advice]
+bitHound integrates with GitHub and BitBucket and has also rolled out automatic commit analysis which will notify bitHound of changes to your repository's branches. When your dependencies are out of date, you'll be pinged in Slack or HipChat or get an email detailing everything.
 
 ![](http://wes.io/e3om/content)
+
+bitHound also has branch status on Pull Requests -  set up pass/fail criteria and bitHound will post the status right to GitHub or Bitbucket.
 
 Another tool that works well with bitHound is called [next-update](https://www.npmjs.com/package/next-update). Install globally on your development machine with `npm install next-update -g` and then run `next-update`. It will check all of your dependencies, update one at a time, and run your tests with each update to make sure that the next version of that dependency doesn't break your tests. If you'd rather not wait for all of your tests to run, you could try [david](http://npm.im/david) (may the force be with you).
 
