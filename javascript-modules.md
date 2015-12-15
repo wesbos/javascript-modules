@@ -298,7 +298,7 @@ If you are already running tasks via gulp, Grunt, or `npm` tasks for your existi
 
 There are many different ways to implement a bundler — you can run it as part of your gulp task, via your webpack config, as an `npm` script, or straight from the command line.
 
-I've [created a repo](TODO) detailing how to use webpack and Browserify along with some sample modules for you to play with. 
+I've [created a repo](https://github.com/wesbos/javascript-modules) detailing how to use webpack and Browserify along with some sample modules for you to play with. 
 
 ### Importing code that isn't a module
 
