@@ -240,7 +240,7 @@ request
 
 One of my favorite things about ES6 modules is that many libraries allow you to cherry-pick just the pieces you want. lodash is a fantastic utility library filled with dozens of helpful JavaScript methods.
 
-We can load the entire library into the `_` variable since lodash exports the entire library as a the main module export (again, Babel transpiles our import to treat it as if lodash is using **export default**):
+We can load the entire library into the `_` variable since lodash exports the entire library as the main module export (again, Babel transpiles our import to treat it as if lodash is using **export default**):
 
 ```js
 // import the entire library in the _ variable
