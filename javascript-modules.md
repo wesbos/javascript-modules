@@ -284,9 +284,9 @@ Because the browser doesn't understand ES6 modules just yet, we need tools to ma
 
 Eventually we won't need to run a bundler on our code and [HTTP/2](https://http2.github.io/) will request all `import` statements in one payload.
 
-There are a few popular bundlers, most of which use Babel as a dependency to transpile your ES6 modules to CommmonJS. 
+There are a few popular bundlers, most of which use Babel as a dependency to transpile your ES6 modules to CommonJS. 
 
-* [Browserify](http://browserify.org/) was initially created to allow node-style commmonjs requires in the browser. It also allows for ES6 modules. 
+* [Browserify](http://browserify.org/) was initially created to allow node-style CommonJS requires in the browser. It also allows for ES6 modules. 
 * [webpack](https://webpack.github.io/) is popular in the React community. It also handles many module formats, not just ES6.
 * [Rollup](https://github.com/rollup/rollup) is built for ES6, but seems to have trouble with sourcemaps — I'd check on this one in a few months. 
 * [JSPM](http://jspm.io/) sits on top of `npm` and [SystemJS](https://github.com/systemjs/systemjs).
